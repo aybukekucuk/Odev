@@ -1,0 +1,12 @@
+C:\Users\MONSTER\source\repos\BlazorWeb\BlazorWeb\Shared\bin\Debug\net6.0\BlazorWeb.Shared.deps.json
+C:\Users\MONSTER\source\repos\BlazorWeb\BlazorWeb\Shared\bin\Debug\net6.0\BlazorWeb.Shared.dll
+C:\Users\MONSTER\source\repos\BlazorWeb\BlazorWeb\Shared\bin\Debug\net6.0\BlazorWeb.Shared.pdb
+C:\Users\MONSTER\source\repos\BlazorWeb\BlazorWeb\Shared\obj\Debug\net6.0\BlazorWeb.Shared.csproj.AssemblyReference.cache
+C:\Users\MONSTER\source\repos\BlazorWeb\BlazorWeb\Shared\obj\Debug\net6.0\BlazorWeb.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MONSTER\source\repos\BlazorWeb\BlazorWeb\Shared\obj\Debug\net6.0\BlazorWeb.Shared.AssemblyInfoInputs.cache
+C:\Users\MONSTER\source\repos\BlazorWeb\BlazorWeb\Shared\obj\Debug\net6.0\BlazorWeb.Shared.AssemblyInfo.cs
+C:\Users\MONSTER\source\repos\BlazorWeb\BlazorWeb\Shared\obj\Debug\net6.0\BlazorWeb.Shared.csproj.CoreCompileInputs.cache
+C:\Users\MONSTER\source\repos\BlazorWeb\BlazorWeb\Shared\obj\Debug\net6.0\BlazorWeb.Shared.dll
+C:\Users\MONSTER\source\repos\BlazorWeb\BlazorWeb\Shared\obj\Debug\net6.0\refint\BlazorWeb.Shared.dll
+C:\Users\MONSTER\source\repos\BlazorWeb\BlazorWeb\Shared\obj\Debug\net6.0\BlazorWeb.Shared.pdb
+C:\Users\MONSTER\source\repos\BlazorWeb\BlazorWeb\Shared\obj\Debug\net6.0\ref\BlazorWeb.Shared.dll

@@ -1,0 +1,60 @@
+﻿@page "/"
+@using BlazorServer.Models
+@inject ILibraryService LibraryService
+
+<SfGrid DataSource="@Tables" Toolbar="@(new List<string>() { "Add", "Edit", "Delete", "Cancel", "Update" })" TValue="Employee">
+    <GridEditSettings AllowAdding="true" AllowDeleting="true" AllowEditing="true" Mode="EditMode.Normal"></GridEditSettings>
+    <GridEvents OnActionBegin="ActionBeginHandler" OnActionComplete="ActionCompleteHandler" TValue="Employee"></GridEvents>
+    <GridColumns>
+        <GridColumn Field="@nameof(Employee.EmployeeId)" IsPrimaryKey="true" IsIdentity="true" Visible="false"></GridColumn>
+        <GridColumn Field="@nameof(Employee.FirstName)" Width="150"></GridColumn>
+        <GridColumn Field="@nameof(Employee.LastName)" Width="150"></GridColumn>
+        <GridColumn Field="@nameof(Employee.BirthDate)" Width="200" TextAlign="TextAlign.Right"></GridColumn>
+        <GridColumn Field="@nameof(Employee.TitleOfCourtesy)" Width="90" Format="C2" TextAlign="TextAlign.Right"></GridColumn>
+        <GridColumn Field="@nameof(Employee.City)" DisplayAsCheckBox="true" Width="70"></GridColumn>
+    </GridColumns>
+</SfGrid>
+
+@code
+{
+    public IEnumerable<Employee> Tables { get; set; }
+    protected override void OnInitialized()
+    {
+        Tables = LibraryService.GetEmployees();
+    }
+    public void ActionBeginHandler(ActionEventArgs<Employee> Args)
+    {
+        if (Args.RequestType.Equals(Syncfusion.Blazor.Grids.Action.Save))
+        {
+            if (Args.Action == "Add")
+            {
+                // Insert the changes into your database here.
+                LibraryService.InsertEmployee(Args.Data);
+            }
+        }
+
+        if (Args.RequestType.Equals(Syncfusion.Blazor.Grids.Action.Save))
+        {
+            if (Args.Action == "Edit")
+            {
+                //Update the changes into your database here.
+                LibraryService.UpdateEmployee(Args.Data.EmployeeId, Args.Data);
+            }
+        }
+
+        if (Args.RequestType.Equals(Syncfusion.Blazor.Grids.Action.Delete))
+        {
+            //Remove the record from your database
+            LibraryService.DeleteEmployee(Args.Data.EmployeeId);
+        }
+    }
+    public void ActionCompleteHandler(ActionEventArgs<Employee> Args)
+    {
+        //will be triggered when CRUD action is complete.
+        if (Args.RequestType.Equals(Syncfusion.Blazor.Grids.Action.Save))
+        {
+            Tables = LibraryService.GetEmployees(); //to fetch the updated data from db to Grid
+        }
+    }
+}
+

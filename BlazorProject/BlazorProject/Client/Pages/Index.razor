@@ -1,0 +1,73 @@
+﻿@page "/"
+@using BlazorProject.Shared
+@using Syncfusion.Blazor.Grids
+
+<SfGrid DataSource="@Employee">
+    <GridColumns>
+        <GridColumn Field=@nameof(Employees.EmployeeID) HeaderText="Employee ID"></GridColumn>
+        <GridColumn Field=@nameof(Employees.FirstName) HeaderText="First Name"></GridColumn>
+        <GridColumn Field=@nameof(Employees.LastName) HeaderText=" Last Name"></GridColumn>
+        <GridColumn Field=@nameof(Employees.Title) HeaderText="Title"></GridColumn>
+    </GridColumns>
+</SfGrid>
+
+@code {
+    public List<Employees> Employee { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Employee = LoadData();
+    }
+
+    private List<Employees> LoadData()
+    {
+        Employees e1 = new Employees
+        {
+            EmployeeID = 1,
+            FirstName = "John",
+            LastName = "Hastings",
+            Title = "IT",
+            TitleOfCourtesy = "MR.",
+            BirthDate = new DateTime(1980, 10, 5),
+            City = "London",
+            Country = "UK",
+        };
+
+        Employees e2 = new Employees
+        {   EmployeeID = 2,
+                FirstName = "Sam",
+                LastName = "Galloway",
+                Title = "IT",
+                TitleOfCourtesy = "MR.",
+                BirthDate = new DateTime(1980, 10, 5),
+                City = "London",
+                Country = "UK",
+        };
+
+        Employees e3 = new Employees
+        {
+            EmployeeID = 3,
+                FirstName = "Mary",
+                LastName = "Smith",
+                Title = "IT",
+                TitleOfCourtesy = "MR.",
+                BirthDate = new DateTime(1980, 10, 5),
+                City = "London",
+                Country = "UK",
+        };
+
+        Employees e4 = new Employees
+        {
+            EmployeeID = 4,
+                FirstName = "Sara",
+                LastName = "Longway",
+                Title = "IT",
+                TitleOfCourtesy = "MR.",
+                BirthDate = new DateTime(1980, 10, 5),
+                City = "London",
+                Country = "UK",
+        };
+
+        return new List<Employees> { e1, e2, e3, e4 };
+    }
+}
